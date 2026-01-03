@@ -105,6 +105,10 @@
 // Usefull func macro that are not available in Swift 
 // ----------------------------------------------------------------------------
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 __attribute__((swift_name("pdMS_TO_TICKS(_:)")))
 uint32_t _pdMS_TO_TICKS(uint32_t xTimeInMs);
 
@@ -142,3 +146,7 @@ void eventGroupIsrHandler(void *arg);
 // ----------------------------------------------------------------------------
 void *taskNotifyIrsArgsAllocate(TaskHandle_t taskHandle, uint32_t value, eNotifyAction action);
 void taskNotifyIsrHandler(void *arg);
+
+#ifdef __cplusplus
+}
+#endif
